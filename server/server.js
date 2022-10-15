@@ -1,7 +1,16 @@
+/* eslint-disable no-console */
 require("dotenv").config();
 
 const express = require("express");
 const connectToDB = require("./database/db");
+const ErrorsMiddleware = require("./middleware/errorMiddleware");
+const LibraryError = require("./utils/libraryError");
+
+process.on("uncoughtRejection", (error) => {
+    console.log("Uncought Rejection.... stopping the server");
+    console.log(error.name, error.message);
+    process.exit(1);
+});
 
 const app = express();
 connectToDB();
@@ -13,10 +22,24 @@ app.get("/test", (req, res) => {
     res.json({ Hi: "Welcome" });
 });
 
-app.listen(
+// Error ErrorsMiddleware
+app.all("*", (req, res, next) => {
+    next(new LibraryError(`Can't find ${req.originalUrl} on this server`, 404));
+});
+
+app.use(ErrorsMiddleware);
+
+const server = app.listen(
     PORT,
-    // eslint-disable-next-line no-console
     console.log(
         `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`
     )
 );
+
+process.on("unhandledRejection", (error) => {
+    console.log("Unhandled Rejection.... stopping the server");
+    console.log(error.name, error.message);
+    server.close(() => {
+        process.exit(1);
+    });
+});
