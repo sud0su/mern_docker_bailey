@@ -6,6 +6,8 @@ const connectToDB = require("./database/db");
 const ErrorsMiddleware = require("./middleware/errorMiddleware");
 const LibraryError = require("./utils/libraryError");
 
+const UserRoutes = require("./routes/userRoutes");
+
 process.on("uncoughtRejection", (error) => {
     console.log("Uncought Rejection.... stopping the server");
     console.log(error.name, error.message);
@@ -21,6 +23,8 @@ const PORT = process.env.PORT || 5000;
 app.get("/test", (req, res) => {
     res.json({ Hi: "Welcome" });
 });
+
+app.use("/api/v1/", UserRoutes);
 
 // Error ErrorsMiddleware
 app.all("*", (req, res, next) => {
