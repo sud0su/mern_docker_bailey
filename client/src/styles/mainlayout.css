@@ -1,0 +1,120 @@
+:root {
+  --light: #edf2f9;
+  --dark: #152e4d;
+  --darker: #12263f;
+  --color-primary: #0891b2;
+  --color-primary-50: #ecfeff;
+  --color-primary-100: #cffafe;
+  --color-primary-light: #06b6d4;
+  --color-primary-lighter: #22d3ee;
+  --color-primary-dark: #0e7490;
+  --color-primary-darker: #155e75;
+}
+
+.dark .dark\:text-light {
+  color: var(--light);
+}
+
+.dark .dark\:bg-dark {
+  background-color: var(--dark);
+}
+
+.dark .dark\:bg-darker {
+  background-color: var(--darker);
+}
+
+.dark .dark\:text-gray-300 {
+  color: #d1d5db;
+}
+
+.dark .dark\:text-indigo-500 {
+  color: #6366f1;
+}
+
+.dark .dark\:text-indigo-100 {
+  color: #e0e7ff;
+}
+
+.dark .dark\:hover\:text-light:hover {
+  color: var(--light);
+}
+
+.dark .dark\:border-indigo-800 {
+  border-color: #3730a3;
+}
+
+.dark .dark\:border-indigo-700 {
+  border-color: #4338ca;
+}
+
+.dark .dark\:bg-indigo-600 {
+  background-color: #4f46e5;
+}
+
+.dark .dark\:hover\:bg-indigo-600:hover {
+  background-color: #4f46e5;
+}
+
+.dark .dark\:border-indigo-500 {
+  border-color: #6366f1;
+}
+
+.hover\:overflow-y-auto:hover {
+  overflow-y: auto;
+}
+
+.dark .dark\:bg-primary-lighter {
+  background-color: #22d3ee;
+}
+
+.dark .dark\:hover\:text-light:hover {
+  color: var(--light);
+}
+
+.hover\:text-primary:hover {
+  color: var(--color-primary);
+}
+
+.hover\:bg-primary-100:hover {
+  background-color: var(--color-primary-100);
+}
+
+.dark .dark\:hover\:bg-primary-dark:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.bg-primary-darker {
+  background-color: var(--color-primary-darker);
+}
+
+.bg-primary-100 {
+  background-color: var(--color-primary-100);
+}
+
+.bg-primary-50 {
+  background-color: var(--color-primary-50);
+}
+
+.text-primary-lighter {
+  color: var(--color-primary-lighter);
+}
+
+.dark .dark\:border-primary-darker {
+  border-color: var(--color-primary-darker);
+}
+
+.dark .dark\:bg-darker {
+  background-color: var(--darker);
+}
+
+.dark .dark\:hover\:bg-primary:hover {
+  background-color: var(--color-primary);
+}
+
+.dark .dark\:text-light {
+  color: var(--light);
+}
+
+.dark .dark\:bg-primary {
+  background-color: var(--color-primary);
+}
